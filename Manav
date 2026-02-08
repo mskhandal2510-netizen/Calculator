@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char op;
+    double num1, num2;
+    bool running = true;
+
+    cout << "=== Simple Calculator App ===\n";
+
+    while (running) {
+        cout << "\nChoose an operation:\n";
+        cout << "+  Addition\n";
+        cout << "-  Subtraction\n";
+        cout << "*  Multiplication\n";
+        cout << "/  Division\n";
+        cout << "q  Quit\n";
+        cout << "Enter choice: ";
+        cin >> op;
+
+        if (op == 'q' || op == 'Q') {
+            running = false;
+            break;
+        }
+
+        cout << "Enter two numbers: ";
+        cin >> num1 >> num2;
+
+        switch (op) {
+            case '+':
+                cout << "Result: " << num1 + num2 << endl;
+                break;
+
+            case '-':
+                cout << "Result: " << num1 - num2 << endl;
+                break;
+
+            case '*':
+                cout << "Result: " << num1 * num2 << endl;
+                break;
+
+            case '/':
+                if (num2 != 0)
+                    cout << "Result: " << num1 / num2 << endl;
+                else
+                    cout << "Error: Division by zero!" << endl;
+                break;
+
+            default:
+                cout << "Invalid operation!" << endl;
+        }
+    }
+
+    cout << "\nCalculator closed. Goodbye!\n";
+    return 0;
+}
